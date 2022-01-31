@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: livetechngrundevops 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: livetechngrundevops
+  template:
+    metadata:
+      labels:
+        app: livetechngrundevops 
+    spec:
+      containers:
+        - name: livetechngrundevops 
+          image: ltapploanapicr.azurecr.io/livetechngrundevops
+          ports:
+          - containerPort: 80
